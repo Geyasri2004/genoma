@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { 
   ArrowLeft, 
   Activity, 
@@ -29,6 +30,19 @@ import FeaturesDashboard from "@/components/FeaturesDashboard";
 
 const Dashboard = () => {
   const [activeMetric, setActiveMetric] = useState("overview");
+  const { toast } = useToast();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    toast({
+      title: "Logged out successfully",
+      description: "You have been logged out of your account.",
+    });
+    // Small delay to show the toast before navigation
+    setTimeout(() => {
+      navigate("/");
+    }, 1000);
+  };
 
   const healthMetrics = [
     {
@@ -97,12 +111,10 @@ const Dashboard = () => {
             <Button variant="outline" size="icon">
               <Settings className="h-4 w-4" />
             </Button>
-            <Link to="/">
-              <Button variant="outline" size="sm">
-                <LogOut className="h-4 w-4 mr-2" />
-                Logout
-              </Button>
-            </Link>
+            <Button variant="outline" size="sm" onClick={handleLogout}>
+              <LogOut className="h-4 w-4 mr-2" />
+              Logout
+            </Button>
           </div>
         </div>
       </header>
