@@ -21,7 +21,7 @@ const HeroSection = () => {
         
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
           Genoma
-          <span className="block text-2xl md:text-4xl lg:text-5xl mt-2 text-accent dark:text-accent">
+          		<span className="block text-2xl md:text-4xl lg:text-5xl mt-2 text-ink">
             Next-Gen Health & Gene Fusion
           </span>
         </h1>
