@@ -25,6 +25,7 @@ import {
   Sparkles
 } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import FeaturesDashboard from "@/components/FeaturesDashboard";
 
 const Dashboard = () => {
   const [activeMetric, setActiveMetric] = useState("overview");
@@ -96,10 +97,12 @@ const Dashboard = () => {
             <Button variant="outline" size="icon">
               <Settings className="h-4 w-4" />
             </Button>
-            <Button variant="outline" size="sm">
-              <LogOut className="h-4 w-4 mr-2" />
-              Logout
-            </Button>
+            <Link to="/">
+              <Button variant="outline" size="sm">
+                <LogOut className="h-4 w-4 mr-2" />
+                Logout
+              </Button>
+            </Link>
           </div>
         </div>
       </header>
@@ -107,23 +110,18 @@ const Dashboard = () => {
       <div className="container mx-auto p-6 space-y-8">
         {/* Welcome Section */}
         <div className="glass-effect rounded-2xl p-8 animate-slide-up">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-4xl font-bold font-display bg-gradient-primary bg-clip-text text-transparent mb-2">
-                Welcome back, Dr. Sarah
-              </h1>
-              <p className="text-muted-foreground text-lg">
-                Your personalized health insights are ready
-              </p>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Sparkles className="h-6 w-6 text-primary animate-glow" />
-              <Badge className="bg-gradient-primary text-primary-foreground px-4 py-2">
-                Premium Account
-              </Badge>
-            </div>
+          <div>
+            <h1 className="text-4xl font-bold font-display bg-gradient-primary bg-clip-text text-transparent mb-2">
+              Welcome back, Dr. Sarah
+            </h1>
+            <p className="text-muted-foreground text-lg">
+              Your personalized health insights are ready
+            </p>
           </div>
         </div>
+
+        {/* Comprehensive Health Dashboard */}
+        <FeaturesDashboard />
 
         {/* Health Metrics Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
