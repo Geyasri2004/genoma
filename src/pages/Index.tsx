@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ProblemStatement from "@/components/ProblemStatement";
 import SolutionOverview from "@/components/SolutionOverview";
-import FeaturesDashboard from "@/components/FeaturesDashboard";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -12,7 +11,6 @@ const Index = () => {
       <HeroSection />
       <ProblemStatement />
       <SolutionOverview />
-      <FeaturesDashboard />
       <Footer />
     </div>
   );
