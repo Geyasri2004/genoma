@@ -7,25 +7,9 @@ import heroImage from "@/assets/hero-medical.jpg";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with Video */}
+      {/* Background */}
       <div className="absolute inset-0 z-0">
-        {/* Video Background */}
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline
-          className="w-full h-full object-cover opacity-15"
-          poster={heroImage}
-        >
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-          <img 
-            src={heroImage} 
-            alt="Genoma Healthcare Platform"
-            className="w-full h-full object-cover"
-          />
-        </video>
-        <div className="absolute inset-0 bg-gradient-hero opacity-85" />
+        <div className="absolute inset-0 bg-gradient-hero opacity-90" />
       </div>
 
       {/* Content */}
@@ -37,7 +21,7 @@ const HeroSection = () => {
         
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
           Genoma
-          <span className="block text-2xl md:text-4xl lg:text-5xl mt-2 text-primary">
+          <span className="block text-2xl md:text-4xl lg:text-5xl mt-2 text-primary-glow dark:text-primary-glow">
             Next-Gen Health & Gene Fusion
           </span>
         </h1>
